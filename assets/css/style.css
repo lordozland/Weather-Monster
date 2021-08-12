@@ -1,0 +1,12 @@
+* {
+    font-family: 'STIX Two Text', serif;
+    color: #e65100;
+}
+
+nav {
+    height: 100px;
+}
+
+.brand-logo {
+    margin: 25px;
+}
