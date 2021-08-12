@@ -5,7 +5,7 @@ $( "#theSubmit" ).click(function(event) {
     event.preventDefault();
 
     var zipCode = document.getElementById('zipCode').value;
-    var cityName = document.getElementById('cityName').textContent;
+    // var cityName = document.getElementById('cityName').name;
 
     localStorage.clear("zipz");
     localStorage.clear("citz");
@@ -13,12 +13,12 @@ $( "#theSubmit" ).click(function(event) {
 
     localStorage.setItem("zipz", zipCode);
     var zipz = localStorage.getItem("zipz");
-    localStorage.setItem("citz", cityName);
-    var citz = localStorage.getItem("citz");
+    // localStorage.setItem("citz", cityName);
+    // var citz = localStorage.getItem("citz");
 
     
     console.log(zipz);
-    console.log(citz);
+    // console.log(citz);
 });
 
 $( "#buttOne" ).click(function() {
