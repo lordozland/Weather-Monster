@@ -5,16 +5,16 @@ $( "#theSubmit" ).click(function(event) {
     event.preventDefault();
 
     var zipCode = document.getElementById('zipCode').value;
-    var cityName = document.getElementById('cityName').value;
+    var cityName = document.getElementById('cityName').textContent;
+
+    localStorage.clear("zipz");
+    localStorage.clear("citz");
 
 
-    if (cityName != null) {
-        localStorage.setItem("zipz", zipCode);
-        var zipz = localStorage.getItem("zipz");
-    } else {
-        localStorage.setItem("citz", cityName);
-        var citz = localStorage.getItem("citz");
-    };
+    localStorage.setItem("zipz", zipCode);
+    var zipz = localStorage.getItem("zipz");
+    localStorage.setItem("citz", cityName);
+    var citz = localStorage.getItem("citz");
 
     
     console.log(zipz);
