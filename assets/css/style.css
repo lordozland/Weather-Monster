@@ -4,7 +4,13 @@
 
 nav {
     height: 100px;
-    font-size: 500%;
+}
+
+input {
+    width: 100px;
+    height: 25px;
+    margin: 5px;
+
 }
 
 .brand-logo {
