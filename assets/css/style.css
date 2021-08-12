@@ -6,13 +6,24 @@ nav {
     height: 100px;
 }
 
-input {
+input, button {
     width: 100px;
     height: 25px;
-    margin: 5px;
+    margin-top: 5px;
 
 }
 
 .brand-logo {
     margin: 25px;
 }
+
+#orBreak {
+    margin-top: 10px;
+
+}
+
+#rightText {
+    border: 20px;
+    border-color: black;
+}
+
