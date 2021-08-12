@@ -1,14 +1,18 @@
-var zipCode = document.getElementById('zipCode').text;
-var city = document.getElementById('city');
-
-
-
 $( "#theSubmit" ).click(function() {
-    localStorage.setItem("zipz", zipCode)
+    var zipCode = document.getElementById('zipCode').value;
+    var cityName = document.getElementById('cityName').value;
 
-    var zipz = localStorage.getItem("zipz")
+    if (cityName != null) {
+        localStorage.setItem("zipz", zipCode);
+        var zipz = localStorage.getItem("zipz");
+    } else {
+        localStorage.setItem("zipz", zipCode);
+        var zipz = localStorage.getItem("zipz");
+    };
+
     
     console.log(zipz);
+    console.log(cityName);
 });
 
 $( "#buttOne" ).click(function() {
