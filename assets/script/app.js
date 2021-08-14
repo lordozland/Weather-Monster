@@ -13,6 +13,7 @@ $( "#theSubmit" ).click(function(event) {
 
     localStorage.setItem("zipz", zipCode);
     var zipz = localStorage.getItem("zipz");
+
     // localStorage.setItem("citz", cityName);
     // var citz = localStorage.getItem("citz");
 
@@ -22,7 +23,7 @@ $( "#theSubmit" ).click(function(event) {
 });
 
 $( "#buttOne" ).click(function() {
-    console.log(city);
+    console.log("duck");
 });
 
 $( "#buttTwo" ).click(function() {
