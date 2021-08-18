@@ -1,9 +1,5 @@
 var document1 = $("rightText");
-var zipCode = document.getElementById('#zipCode');
-var cityName = $('cityName');
 var theSub = $("#theSubmit");
-
-console.log(zipCode)
 
 var now = moment().format('LT');
 console.log(now)
@@ -15,24 +11,22 @@ theSub.click(function (event) {
     event.preventDefault();
     console.log("here");
 
-    localStorage.clear("A");
+    localStorage.clear("saveCity");
+
+    var cityName = document.getElementById('cityName').value;
+
+    localStorage.setItem("cityName", JSON.stringify(cityName))
+
+    var saveCity = {};
+
+    saveCity.values = JSON.parse(cityName);
 
 
-    var A = {
-        zip: zipCode,
-        city: "here",
-        lon: "long",
-        lat: "lat",
-    }
+    localStorage.setItem("saveCity", JSON.stringify(saveCity));
 
-    localStorage.setItem("A", JSON.stringify(A));
+    var Als = JSON.parse(localStorage.getItem('saveCity'));
 
-    var Als = JSON.parse(localStorage.getItem('A'));
-
-    console.log(Als.zip)
-    console.log(Als.city)
-    console.log(Als.lon)
-    console.log(Als.lat)
+    console.log(Als.cityName)
 
 
 
