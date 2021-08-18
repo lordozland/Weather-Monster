@@ -35,9 +35,14 @@ theSub.click(function (event) {
 
     console.log(AlsUse)
 
-    var citySearchUrl = `api.openweathermap.org/data/2.5/weather?q=' + AlsUse + '&appid=' + key `
+    var citySearchUrl = 'https://api.openweathermap.org/data/2.5/weather?q=' + AlsUse + '&appid=' + key
+    console.log(citySearchUrl)
     fetch(citySearchUrl)
-        .then(console.log('Yay!'))
+        .then(function (response) {
+            if (response.ok) {
+                console.log("yay!")
+            }
+        })
 
 
 
