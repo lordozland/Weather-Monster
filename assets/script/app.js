@@ -1,8 +1,12 @@
 var document1 = $("rightText");
-var zipCode = $('#zipCode');
+var zipCode = document.getElementById('#zipCode');
 var cityName = $('cityName');
 var theSub = $("#theSubmit");
 
+console.log(zipCode)
+
+var now = moment().format('LT');
+console.log(now)
 
 var key = `7a274d9b8710b60aed4aaa210b1e6dd1`
 
@@ -13,8 +17,9 @@ theSub.click(function (event) {
 
     localStorage.clear("A");
 
+
     var A = {
-        zip: 12345,
+        zip: zipCode,
         city: "here",
         lon: "long",
         lat: "lat",
