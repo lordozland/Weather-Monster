@@ -14,21 +14,21 @@ theSub.click(function (event) {
     localStorage.clear("A");
 
     var A = {
-        zip: '12345',
-        city: 'here',
-        lon: 'long',
-        lat: 'lat'
+        zip: 12345,
+        city: "here",
+        lon: "long",
+        lat: "lat",
     }
 
-    localStorage.setItem('A', A);
+    localStorage.setItem("A", JSON.stringify(A));
 
-    var Als = localStorage.getItem("A");
+    var Als = JSON.parse(localStorage.getItem('A'));
 
     console.log(Als.zip)
     console.log(Als.city)
     console.log(Als.lon)
     console.log(Als.lat)
-    
+
 
 
 
