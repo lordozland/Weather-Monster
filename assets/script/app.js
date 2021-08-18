@@ -6,7 +6,9 @@ console.log(now)
 
 var key = `7a274d9b8710b60aed4aaa210b1e6dd1`
 
-var url = `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}`
+
+
+var latlonUrl = `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}`
 
 // Submit Button
 theSub.click(function (event) {
@@ -14,6 +16,7 @@ theSub.click(function (event) {
     console.log("here");
 
     localStorage.clear("cityName");
+
 
     var cityName = document.getElementById('cityName').value;
     localStorage.setItem("cityName", cityName)
@@ -25,11 +28,16 @@ theSub.click(function (event) {
         city: cn1
     };
 
-    localStorage.setItem("saveNew", JSON.stringify(saveNew));
+    localStorage.setItem("saveNew", JSON.stringify(saveNew)); 
 
     var Als = JSON.parse(localStorage.getItem('saveNew'));
+    var AlsUse = Als.city;
 
-    console.log(Als.city)
+    console.log(AlsUse)
+
+    var citySearchUrl = `api.openweathermap.org/data/2.5/weather?q=' + AlsUse + '&appid=' + key `
+    fetch(citySearchUrl)
+        .then(console.log('Yay!'))
 
 
 
