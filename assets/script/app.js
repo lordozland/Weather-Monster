@@ -6,6 +6,8 @@ console.log(now)
 
 var key = `7a274d9b8710b60aed4aaa210b1e6dd1`
 
+var url = `https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}`
+
 // Submit Button
 theSub.click(function (event) {
     event.preventDefault();
@@ -28,8 +30,6 @@ theSub.click(function (event) {
     var Als = JSON.parse(localStorage.getItem('saveNew'));
 
     console.log(Als.city)
-
-
 
 
 
