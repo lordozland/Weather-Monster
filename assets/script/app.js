@@ -1,3 +1,7 @@
+var document1 = document.getElementById("rightText");
+
+
+
 // Submit Button
 
 
@@ -39,5 +43,20 @@ $( "#buttFour" ).click(function() {
 });
 
 $( "#buttFive" ).click(function() {
+    userAction();
     console.log("falcon");
 });
+
+
+// API Stufflings
+
+const userAction = async () => {
+    const response = await fetch('https://api.openweathermap.org/data/2.5/onecall?lat={35.7418}&lon={78.7136}&appid={283b766352816900dd7bdc94dd0d4456}');
+    const myJson = await response.json(); //extract JSON from the http response
+    var action1 = document.createElement("DIV");
+    var text1 = document.createTextNode(myJson);
+    
+    action1.appendChild(text1);
+    document1.appendChild(action1);
+
+  }
