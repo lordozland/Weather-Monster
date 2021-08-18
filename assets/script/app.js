@@ -11,22 +11,23 @@ theSub.click(function (event) {
     event.preventDefault();
     console.log("here");
 
-    localStorage.clear("saveCity");
+    localStorage.clear("cityName");
 
     var cityName = document.getElementById('cityName').value;
-
-    localStorage.setItem("cityName", JSON.stringify(cityName))
-
-    var saveCity = {};
-
-    saveCity.values = JSON.parse(cityName);
+    localStorage.setItem("cityName", cityName)
+    var cn1 = localStorage.getItem("cityName")
+    console.log(cn1)
 
 
-    localStorage.setItem("saveCity", JSON.stringify(saveCity));
+    var saveNew = {
+        city: cn1
+    };
 
-    var Als = JSON.parse(localStorage.getItem('saveCity'));
+    localStorage.setItem("saveNew", JSON.stringify(saveNew));
 
-    console.log(Als.cityName)
+    var Als = JSON.parse(localStorage.getItem('saveNew'));
+
+    console.log(Als.city)
 
 
 
