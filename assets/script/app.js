@@ -1,4 +1,6 @@
 var document1 = document.getElementById("rightText");
+var zipCode = document.getElementById('zipCode');
+var cityName = document.getElementById('cityName');
 
 
 
@@ -8,11 +10,9 @@ var document1 = document.getElementById("rightText");
 $( "#theSubmit" ).click(function(event) {
     event.preventDefault();
 
-    var zipCode = document.getElementById('zipCode').value;
-    // var cityName = document.getElementById('cityName').name;
-
     localStorage.clear("zipz");
     localStorage.clear("citz");
+
 
 
     localStorage.setItem("zipz", zipCode);
@@ -23,7 +23,11 @@ $( "#theSubmit" ).click(function(event) {
 
     
     console.log(zipz);
-    // console.log(citz);
+    console.log(citz);
+
+
+    //   API from https://stackoverflow.com/questions/54600060/how-to-call-rest-api-in-html/54600143
+
 });
 
 $( "#buttOne" ).click(function() {
@@ -60,3 +64,8 @@ const userAction = async () => {
     document1.appendChild(action1);
 
   }
+
+
+
+
+
