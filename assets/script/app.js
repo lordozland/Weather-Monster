@@ -39,10 +39,27 @@ theSub.click(function (event) {
     console.log(citySearchUrl)
     fetch(citySearchUrl)
         .then(function (response) {
+            console.log(response)
             if (response.ok) {
                 console.log("yay!")
+                // latty = data.coord.lat
             }
         })
+
+        var dubz = $('<div>')
+        var Elly = document.createTextNode("hello");
+        var boxing = document.getElementById('#texBox');
+
+        dubz.appendChild(Elly)
+        boxing.appendChild(dubz);
+        
+        
+
+        
+        boxing.innerHTML = (Elly) 
+
+        
+        
 
 
 
@@ -105,6 +122,8 @@ $( "#buttFive" ).click(function() {
 //     document1.appendChild(action1);
 
 // }
+
+//  New Things
 
 
 
