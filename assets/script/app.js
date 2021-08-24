@@ -1,7 +1,10 @@
-var document1 = $("rightText");
+var rightText = $("#rightText");
 var theSub = $("#theSubmit");
 
 var now = moment().format('LT');
+var latty;
+var lonny;
+
 console.log(now)
 
 var key = `7a274d9b8710b60aed4aaa210b1e6dd1`
@@ -41,17 +44,21 @@ theSub.click(function (event) {
         .then(function (response) {
             console.log(response)
             if (response.ok) {
-                console.log("yay!")
-                // latty = data.coord.lat
+                response.json().then(function (data) {
+                    latty = data.coord.lat
+                    lonny = data.coord.lon
+                    return { lonny, latty }
+                })
             }
         })
 
-        var dubz = document.createElement('DIV')
-        var Elly = document.createTextNode("hello");
-        var boxing = document.getElementById('#texBox');
+
+        
+        var dubz = document.createElement('DIV');
+        var Elly = document.createTextNode(latty);
 
         dubz.appendChild(Elly);
-        boxing.innerHTML = dubz;
+        rightText.html(dubz);
         
         
 
