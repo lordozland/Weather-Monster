@@ -46,17 +46,17 @@ theSub.click(function (event) {
             }
         })
 
-        var dubz = $('<div>')
+        var dubz = document.createElement('DIV')
         var Elly = document.createTextNode("hello");
         var boxing = document.getElementById('#texBox');
 
-        dubz.appendChild(Elly)
-        boxing.appendChild(dubz);
+        dubz.appendChild(Elly);
+        boxing.innerHTML = dubz;
         
         
 
         
-        boxing.innerHTML = (Elly) 
+        
 
         
         
