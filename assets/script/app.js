@@ -45,32 +45,28 @@ theSub.click(function (event) {
             console.log(response)
             if (response.ok) {
                 response.json().then(function (data) {
-                    latty = data.coord.lat
-                    lonny = data.coord.lon
-                    return { lonny, latty }
-                })
-            }
-        })
-
-
-        
-        var dubz = document.createElement('DIV');
-        var Elly = document.createTextNode(latty);
-
-        dubz.appendChild(Elly);
-        rightText.html(dubz);
-        
-        
-
-        
-        
-
-        
-        
-
-
-
+                    latty = data.coord.lat;
+                    lonny = data.coord.lon;
+                    callEm(latty, lonny);
+                    return { lonny, latty };
+                });
+                
+            };
+        });
 })
+
+function callEm(latty, lonny) {
+    if (lonny && latty) {
+        const getEm = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latty + '&lon=' + lonny '&exclude=minutely,alerts&appid=' + key
+        if (response.ok) {
+            response.json().then(function (data) {
+                console.log(data)
+                return data;
+            })
+            
+        }
+    }
+}
 
 // .click(function(event) {
 //     event.preventDefault();
