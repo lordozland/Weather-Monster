@@ -72,13 +72,14 @@ function callEm(latty, lonny) {
 
             })
         }
-    var tempus = JSON.parse(localStorage.getItem('tempus'));
+    var tempus = localStorage.getItem('tempus');
     var Als = JSON.parse(localStorage.getItem('saveNew'));
     var AlsUse = Als.city;
+    var tempusTemple = tempus.current.temp;
     var createUs = document.createElement("h1");
     var nameUs = document.createTextNode(AlsUse);
     var lestUs = document.createElement("h3");
-    var tempusUs = document.createTextNode(tempus);
+    var tempusUs = document.createTextNode(tempusTemple);
 
     lestUs.appendChild(tempusUs);
     createUs.appendChild(nameUs);
