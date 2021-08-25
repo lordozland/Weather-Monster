@@ -7,7 +7,7 @@ var lonny;
 
 console.log(now)
 
-var key = `7a274d9b8710b60aed4aaa210b1e6dd1`
+var key = `7a274d9b8710b60aed4aaa210b1e6dd1`;
 
 
 
@@ -56,8 +56,8 @@ theSub.click(function (event) {
 })
 
 function callEm(latty, lonny) {
-    if (lonny && latty) {
-        const getEm = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latty + '&lon=' + lonny '&exclude=minutely,alerts&appid=' + key + '&units=imperial';
+    if (latty && lonny) {
+        var getEm = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latty +'&lon=' + lonny + '&exclude=hourly,daily,alerts&appid=' + key + '&units=imperial';
         fetch(getEm)
             .then(function (response) {
                 if (response.ok) {
@@ -65,12 +65,11 @@ function callEm(latty, lonny) {
                         console.log(data)
                         return data;
                     })
-            })
+                }
 
-            
+            })
         }
-    }
-}
+    };
 
 // .click(function(event) {
 //     event.preventDefault();
@@ -131,8 +130,3 @@ $( "#buttFive" ).click(function() {
 // }
 
 //  New Things
-
-
-
-
-
