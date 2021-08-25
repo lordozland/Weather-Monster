@@ -4,6 +4,7 @@ var theSub = $("#theSubmit");
 var now = moment().format('LT');
 var latty;
 var lonny;
+var tempus;
 
 console.log(now)
 
@@ -63,13 +64,25 @@ function callEm(latty, lonny) {
                 if (response.ok) {
                     response.json().then(function (data) {
                         console.log(data)
-                        return data;
+                        tempus = data.current.temp
+                        return tempus;
                     })
                 }
 
             })
         }
-    };
+    
+    var createUs = document.createElement("h1");
+    var nameUs = document.createTextNode(AlsUse);
+    var lestUs = document.createElement("h3");
+    var tempusUs = document.createTextNode(tempus);
+
+    lestUs.appendChild(tempusUs);
+    createUs.appendChild(nameUs);
+    rightText.innerHtml(createUs);
+    rightText.innerHtml(lestUs);
+
+};
 
 // .click(function(event) {
 //     event.preventDefault();
