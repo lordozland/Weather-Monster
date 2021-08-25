@@ -65,13 +65,16 @@ function callEm(latty, lonny) {
                     response.json().then(function (data) {
                         console.log(data)
                         tempus = data.current.temp
+                        localStorage.setItem("tempus", JSON.stringify(tempus)); 
                         return tempus;
                     })
                 }
 
             })
         }
-    
+    var tempus = JSON.parse(localStorage.getItem('tempus'));
+    var Als = JSON.parse(localStorage.getItem('saveNew'));
+    var AlsUse = Als.city;
     var createUs = document.createElement("h1");
     var nameUs = document.createTextNode(AlsUse);
     var lestUs = document.createElement("h3");
@@ -79,8 +82,8 @@ function callEm(latty, lonny) {
 
     lestUs.appendChild(tempusUs);
     createUs.appendChild(nameUs);
-    rightText.innerHtml(createUs);
-    rightText.innerHtml(lestUs);
+    rightText.append(createUs);
+    rightText.append(lestUs);
 
 };
 
