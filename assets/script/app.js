@@ -66,6 +66,19 @@ function callEm(latty, lonny) {
                         console.log(data)
                         tempus = data.current.temp
                         localStorage.setItem("tempus", tempus); 
+                        var tempus = localStorage.getItem('tempus');
+                        var Als = JSON.parse(localStorage.getItem('saveNew'));
+                        var AlsUse = Als.city;
+                        // var tempusTemple = tempus.current.temp;
+                        var createUs = document.createElement("h1");
+                        var nameUs = document.createTextNode(AlsUse);
+                        var lestUs = document.createElement("h3");
+                        console.log(tempus)
+                        var tempusUs = document.createTextNode(tempus);
+                        lestUs.appendChild(tempusUs);
+                        createUs.appendChild(nameUs);
+                        rightText.append(createUs);
+                        rightText.append(lestUs);
                         return tempus;
                     })
                 }
@@ -73,19 +86,17 @@ function callEm(latty, lonny) {
             })
         }
     
-    var tempus = localStorage.getItem('tempus');
-    var Als = JSON.parse(localStorage.getItem('saveNew'));
-    var AlsUse = Als.city;
-    var tempusTemple = tempus.current.temp;
-    var createUs = document.createElement("h1");
-    var nameUs = document.createTextNode(AlsUse);
-    var lestUs = document.createElement("h3");
-    var tempusUs = document.createTextNode(tempusTemple);
+    // var tempus = localStorage.getItem('tempus');
+    // var Als = JSON.parse(localStorage.getItem('saveNew'));
+    // var AlsUse = Als.city;
+    // // var tempusTemple = tempus.current.temp;
+    // var createUs = document.createElement("h1");
+    // var nameUs = document.createTextNode(AlsUse);
+    // var lestUs = document.createElement("h3");
+    // console.log(tempus)
+    // var tempusUs = document.createTextNode(tempus);
 
-    lestUs.appendChild(tempusUs);
-    createUs.appendChild(nameUs);
-    rightText.append(createUs);
-    rightText.append(lestUs);
+
 
 };
 
