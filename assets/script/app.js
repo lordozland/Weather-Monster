@@ -65,7 +65,7 @@ function callEm(latty, lonny) {
                     response.json().then(function (data) {
                         console.log(data)
                         tempus = data.current.temp
-                        localStorage.setItem("tempus", JSON.stringify(tempus)); 
+                        localStorage.setItem("tempus", tempus); 
                         return tempus;
                     })
                 }
