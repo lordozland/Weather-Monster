@@ -72,6 +72,7 @@ function callEm(latty, lonny) {
 
             })
         }
+    
     var tempus = localStorage.getItem('tempus');
     var Als = JSON.parse(localStorage.getItem('saveNew'));
     var AlsUse = Als.city;
