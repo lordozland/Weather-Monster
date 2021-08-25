@@ -57,12 +57,16 @@ theSub.click(function (event) {
 
 function callEm(latty, lonny) {
     if (lonny && latty) {
-        const getEm = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latty + '&lon=' + lonny '&exclude=minutely,alerts&appid=' + key
-        if (response.ok) {
-            response.json().then(function (data) {
-                console.log(data)
-                return data;
+        const getEm = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + latty + '&lon=' + lonny '&exclude=minutely,alerts&appid=' + key + '&units=imperial';
+        fetch(getEm)
+            .then(function (response) {
+                if (response.ok) {
+                    response.json().then(function (data) {
+                        console.log(data)
+                        return data;
+                    })
             })
+
             
         }
     }
